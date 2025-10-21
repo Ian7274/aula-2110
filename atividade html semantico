@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Carlos Mendes | Desenvolvedor de Sistemas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        #sobre p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .projetos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .projeto {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .projeto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .projeto h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .projeto p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .habilidades-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .habilidade {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .habilidade:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 3px solid #667eea;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Carlos Mendes</h1>
+        <p>Desenvolvedor de Sistemas</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre o Carlos</h2>
+            <p>
+                Bem-vindo ao meu portfólio profissional! Sou um Desenvolvedor de Sistemas apaixonado por criar soluções inovadoras e eficientes. 
+                Com experiência em diversas linguagens de programação e tecnologias web, dedico-me a desenvolver aplicações que resolvem problemas 
+                reais e melhoram a experiência dos utilizadores.
+            </p>
+            <p>
+                Ao longo da minha carreira, trabalhei em projetos desafiadores que me permitiram aprofundar conhecimentos em desenvolvimento full-stack, 
+                otimização de bases de dados e implementação de boas práticas de programação. Tenho um compromisso constante com a aprendizagem contínua 
+                e a excelência técnica, sempre procurando manter-me atualizado com as tendências e tecnologias mais recentes da indústria.
+            </p>
+            <p>
+                Sou um profissional colaborativo, com forte capacidade de comunicação e resolução de problemas. Gosto de trabalhar em equipas 
+                multidisciplinares e de contribuir para o sucesso de projetos desafiadores. Se procura um desenvolvedor dedicado e competente, 
+                fico feliz em discutir como posso adicionar valor ao seu projeto.
+            </p>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="projetos-container">
+                <div class="projeto">
+                    <h3>Sistema de Tarefas</h3>
+                    <p>
+                        Aplicação web completa para gestão de tarefas e projetos. Desenvolvida com tecnologias modernas, 
+                        permitindo aos utilizadores criar, atualizar e organizar tarefas de forma eficiente. 
+                        Inclui autenticação de utilizadores e sincronização em tempo real.
+                    </p>
+                </div>
+                <div class="projeto">
+                    <h3>Página de Portfólio</h3>
+                    <p>
+                        Portfólio profissional responsivo que apresenta projetos, habilidades e informações de contato. 
+                        Desenvolvido com HTML, CSS e JavaScript, com foco em design moderno e experiência do utilizador. 
+                        Totalmente otimizado para dispositivos móveis e desktop.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <div class="habilidades-container">
+                <div class="habilidade">HTML</div>
+                <div class="habilidade">CSS</div>
+                <div class="habilidade">JavaScript</div>
+                <div class="habilidade">Python</div>
+                <div class="habilidade">SQL</div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <p><strong>Entre em Contacto</strong></p>
+            <p>E-mail: <a href="mailto:carlos.mendes@email.com">carlos.mendes@email.com</a></p>
+            <div class="copyright">
+                <p>&copy; 2025 Carlos Mendes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
