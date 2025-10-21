@@ -1,0 +1,62 @@
+import streamlit as st
+
+# Título do aplicativo
+st.title('Painel de Estudos Interativo')
+
+# Seção de registro de atividades
+st.header('Registro de Atividades')
+
+horas_estudo = st.slider('Quantas horas você estudou hoje?', 0, 12, 4)
+pausas = st.slider('Quantas pausas você fez?', 0, 10, 2)
+atividade = st.selectbox('Qual tipo de atividade você realizou?', 
+                         ('Leitura', 'Exercícios', 'Revisão'))
+
+st.subheader('Métricas do seu estudo:')
+st.write(f'Horas estudadas: {horas_estudo}')
+st.write(f'Pausas realizadas: {pausas}')
+st.write(f'Atividade principal: {atividade}')
+
+# Mensagens personalizadas
+st.header('Análise do seu dia de estudo:')
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader('Tempo de Estudo')
+    if horas_estudo >= 6:
+        st.success('Excelente! Você dedicou um bom tempo aos estudos.')
+    elif horas_estudo >= 3:
+        st.info('Bom trabalho! Continue assim.')
+    else:
+        st.warning('Tente dedicar um pouco mais de tempo aos estudos.')
+
+with col2:
+    st.subheader('Pausas')
+    if pausas <= horas_estudo // 2 and pausas > 0:
+        st.success('Ótimo! Suas pausas foram adequadas ao tempo de estudo.')
+    elif pausas == 0:
+        st.warning('Lembre-se de fazer pausas para descansar a mente!')
+    else:
+        st.error('Cuidado! Muitas pausas podem atrapalhar a concentração.')
+
+with col3:
+    st.subheader('Tipo de Atividade')
+    if atividade == 'Leitura':
+        st.info('Leitura é fundamental para absorver novos conhecimentos. Ótima escolha!')
+    elif atividade == 'Exercícios':
+        st.info('Resolver exercícios ajuda a fixar o conteúdo e identificar pontos fracos. Muito bom!')
+    else:
+        st.info('A revisão é crucial para consolidar o aprendizado a longo prazo. Parabéns!')
+
+# Dicas de estudo (Expander)
+with st.expander('Dicas de Estudo'):
+    st.write('''
+    * **Técnica Pomodoro:** Estude por 25 minutos e faça uma pausa de 5. A cada 4 ciclos, faça uma pausa mais longa (15-30 minutos).
+    * **Ambiente:** Encontre um local tranquilo e livre de distrações para estudar.
+    * **Defina metas:** Tenha objetivos claros para cada sessão de estudo.
+    * **Revise regularmente:** A revisão espaçada é mais eficaz para a memorização.
+    * **Durma bem:** O sono é essencial para a consolidação da memória.
+    ''')
+
+# Rodapé
+st.markdown('---')
+st.markdown('Desenvolvido com ❤️ por Manus - Seu Assistente de Estudos')
